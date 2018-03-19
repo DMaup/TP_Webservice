@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>TP_Webservice</title>
+</head>
+<body>
+<div id="app">
+    <div id="events"></div>
+        <div id="interface">
+            <form id="form-event">
+                <label>
+                    <span>Évènement :</span>
+                    <input type="text" id="event_title">
+                </label>
+                <label>
+                    <span>Catégorie :</span>
+                    <input type="text" id="category" disabled="disabled">
+                </label>
+                <label>
+                    <span>Description :</span>
+                    <input type="text" id="description">
+                </label>
+                <label>
+                    <span>Adresse :</span>
+                    <input type="text" id="address">
+                </label>
+                <label>
+                    <span>Date :</span>
+                    <input type="date" id="date">
+                </label>
+                <label>
+                    <span>Heure :</span>
+                    <input type="time" id="time">
+                </label>
+                <fieldset>
+
+                    <label>
+                        <span>Exposition :</span>
+                        <input type="radio" name="category" id="exposition" value="exposition">
+                    </label>
+                    <label>
+                        <span>Festival :</span>
+                        <input type="radio" name="category" id="festival" value="festival">
+                    </label>
+                    <label>
+                        <span>Sortie :</span>
+                        <input type="radio" name="category" id="sortie" value="sortie">
+                    </label>
+                </fieldset>
+                <input type="submit" value="Ajouter">
+            </form>
+        </div>
+
+</div>
+<script src="main.js"></script>
+</body>
+</html>

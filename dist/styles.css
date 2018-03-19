@@ -1,0 +1,80 @@
+#app,label{
+    display:flex;
+}
+
+#app,body,html{
+    margin:0;
+    height:100%;
+    position: relative;
+}
+
+#map{
+    margin-top: 28%;
+    height:45%;
+    width:50%;
+    position: absolute;
+}
+
+#interface{
+    height:55%;
+    width:calc(50% - 20px);
+    float: left;
+    margin-bottom: 25%;
+    padding:10px;
+    position: absolute;
+}
+
+#events{
+    height:100%;
+    width:calc(50% - 20px);
+    margin-left: 50%;
+    padding:10px;
+    position: absolute;
+    border: 1px solid black;
+}
+
+label{
+    justify-content:space-between;
+    width:100%;
+    margin: 0;
+}
+
+fieldset label{
+    width:120px;
+}
+
+#add-event{
+    bottom:10px;
+    right:0;
+    position:fixed;
+    display:flex;
+}
+
+input{
+    margin:5px;
+}
+
+input[type=submit]{
+    cursor:pointer;
+}
+
+.event{
+    margin-top:5px;
+    padding:10px;
+    background:#969696;
+    box-shadow:11px 10px 123px 0 rgba(0,0,0,.75);
+    position:relative;
+}
+
+.event .edit,.event .remove{
+    position:absolute;
+    font-size:25px;right:5px;
+}
+
+.event .remove{
+    top:5px;
+}
+
+.event .edit{
+    top:35px;
+}
