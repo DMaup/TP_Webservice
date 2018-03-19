@@ -14,7 +14,6 @@ class Service {
             error: function (error) {
                 console.log(error);
             }
-
         });
     }
 

@@ -1,14 +1,10 @@
 const $   = require("jquery");
 const app = require("./class/App");
 
-
 app.loadEventsFromDb();
-
-
 
 app.$form.submit(function(event){
     event.preventDefault();
-
 
     if (app.editedEvent){
 
@@ -17,6 +13,7 @@ app.$form.submit(function(event){
 
     else {
         app.addEvent();
+
         void window.location.reload();
     }
 });
@@ -29,14 +26,11 @@ app.$event_container.on("click", ".remove, .edit", function(){
     const position  = $events.index($parent);
 
     if($this.hasClass("remove")) {
-
         app.removeEventAtIndex(position);
-        // app.resetForm();
     }
 
     else{
         app.editEventAtIndex(position);
-
     }
 });
 

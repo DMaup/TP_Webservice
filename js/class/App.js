@@ -11,7 +11,8 @@ class App{
         this.$address           = $("#address");
         this.$date              = $("#date");
         this.$time              = $("#time");
-        this.$category          = $("#category");
+        this.$category          = $("[name=category]");
+        this.$category_view     = $("#category");
         this.$event_container   = $("#events");
 
         this.$submit            = this.$form.find("input[type='submit']");
@@ -40,22 +41,18 @@ class App{
         const address       = this.$address.val();
         const date          = this.$date.val() + " " + this.$time.val() + ":00";
         const time          = this.$time.val();
-
-        //const category      = this.$category.val();
-
+        const category      = this.$category.filter(":checked").val();
 
 
-        if(!event_title || !description || !address || !date) return false;
+
+        if(!event_title || !description || !address || !date || !category) return false;
         const create_data = {
             event_title: event_title,
             description: description,
             address: address,
-            date: date
-            //category: category
+            date: date,
+            category: category
         };
-        console.log(create_data);
-
-
 
         this.service.createEvent(
             create_data,
@@ -120,8 +117,7 @@ class App{
         this.$address.val(this.editedEvent.address);
         this.$date.val(this.year + "-" + this.month + "-" + this.day);
         this.$time.val(this.hour + ":" + this.min + ":00");
-        //this.$date.val(this.editedEvent.date);
-        this.$category.val(this.editedEvent.category);
+        this.$category_view.val(this.editedEvent.category);
     };
 
 
@@ -130,7 +126,7 @@ class App{
         const description   = this.$description.val();
         const address       = this.$address.val();
         const date          = this.$date.val() + " " + this.$time.val();
-        //const category      = this.$category.val();
+        const category      = this.$category.filter(":checked").val();
         console.log(date);
 
         if(!event_title || !description) return false;
@@ -138,8 +134,8 @@ class App{
             event_title: event_title,
             description: description,
             address: address,
-            date: date
-            //category: category
+            date: date,
+            category: category
         };
 
         this.service.updateEvent(
@@ -151,12 +147,10 @@ class App{
                     this.editedEvent.description = description;
                     this.editedEvent.address = address;
                     this.editedEvent.date = new Date();
-                    //this.editedEvent.category = category;
+                    this.editedEvent.category = category;
                     this.editedEvent.update();
                     this.resetForm();
                     void window.location.reload();
-                    console.log("Evènement mis à jour!");
-
                 }
                 else{
                     console.log("Edition impossible!");
@@ -201,7 +195,6 @@ class App{
             event.render(this.$event_container);
         }
     };
-
 }
 
 module.exports =new App();

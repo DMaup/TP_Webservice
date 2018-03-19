@@ -32,8 +32,6 @@ class Event {
         this.$address       = $("<p>A : " + this.address + "</p>");
         this.$date          = $("<p>Le " + this.date.toLocaleString("fr") + "</p>");
         this.$category      = $("<p>" + this.category + "</p><br>");
-        //this.event_id      = $("<i>" + this.event_id + "</i>");
-
 
         //Créer un élément (dom) dynamiquement
 
@@ -42,11 +40,9 @@ class Event {
         this.$dom.append( this.$address);
         this.$dom.append( this.$date );
         this.$dom.append( this.$category );
-        //this.$dom.append( this.$event_id);
 
         //On ajoute l'élement dans le dom parent
         $parent.append( this.$dom );
-
     }
 
     remove(){
@@ -54,15 +50,11 @@ class Event {
     }
 
     update(){
-        // this.$dom.find("h4").html( this.event );
-        // this.$dom.find("p").html( this.description );
-        // this.$dom.find("i").html( "Créé le " + this.date.toLocaleString("fr") );
         this.$event_title.html( this.event_title );
         this.$description.html( this.description );
         this.$address.html(this.address);
         this.$date.html(this.date);
         this.$category.html(this.category);
-        //this.$date.html( "Modifiée le " + this.date );
     }
 
     toJSON(){

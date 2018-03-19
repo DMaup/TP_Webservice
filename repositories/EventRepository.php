@@ -1,7 +1,7 @@
 <?php
 class EventRepository extends Repository {
 
-	private const EVENTS_BY_PAGE = 3;
+	private const EVENTS_BY_PAGE = 10;
 
 	function createEvent( Event $event ) {
 		$sql = "INSERT INTO events
